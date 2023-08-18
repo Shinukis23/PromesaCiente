@@ -52,6 +52,7 @@ print("Verificando contenido del archivo .....")
 #file_id1 = "12Bvbb8KbquSbrJz72bOonFh4Pqn2bCi8" #cortes2023.xlxs
 file_id0 = "1F0L_aHVNNhGuV-KNnuT6nCr_X1Af3l3E" #cortes2023.xlxs
 file_id1 = "15vHlzGFgi9MjxyclqmNArvheijJhLSK5" #tiempos.xls
+file_id2 = "17-gj5CshmFmb-hrFm3Dh4a12P8DcR4bB" #ReporteProduccionDBresultado.xlsx
 #https://docs.google.com/spreadsheets/d/12Bvbb8KbquSbrJz72bOonFh4Pqn2bCi8/edit?usp=drive_link&ouid=115432518353620088181&rtpof=true&sd=true
 scopes = [
 'https://www.googleapis.com/auth/spreadsheets',
@@ -113,7 +114,7 @@ def parse_args():
     return args
 
 
-#def Principal(Directorio_de_trabajo,ReporteProduccionDB,Rutas_pendientes):
+#de Principal(Directorio_de_trabajo,ReporteProduccionDB,Rutas_pendientes):
 def Principal(Directorio_de_trabajo,ReporteProduccionDB):
   print(Directorio_de_trabajo+'\\Job no Drop Location.xlsx')
   ############ds = pd.read_csv(nombre)
