@@ -12,7 +12,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime
 from openpyxl import load_workbook
-
+import sys
 # Get the current working directory
 directory = os.getcwd()
 plt.rc('figure',figsize = (70,20))
@@ -21,6 +21,7 @@ dfs = []
 #####
 
 print(pd.__version__)
+
 # Supongamos que tienes un DataFrame llamado "dataframe" con tus datos
 
 # Ruta del archivo de Excel donde quieres agregar el DataFrame
@@ -49,6 +50,8 @@ nombre_nueva_hoja = 'Due_Date'
 
 
 
+print(sys.version)
+
 ###
 datos = pd.read_excel(r'DuedateRutas_Reporte.xlsx',sheet_name='Semanal')
 #datos = pd.read_csv()
@@ -74,6 +77,8 @@ result3 = datos.groupby([
 
 result3.to_excel(r'DueDate_Grupo7.xlsx')
 """
+
+
 #Perfecto
 def crear_lista(group):
     count_true = group['Menor que 0'].sum()  # Cuenta cuántos son True
@@ -88,11 +93,11 @@ def crear_lista(group):
 result = datos.groupby([
     'Created by (Salesperson)',
     'Customer',
-    pd.Grouper(key='Created', freq='1T'),
+    pd.Grouper(key='Created', freq='60S'),
     pd.Grouper(key='Due_Date_Calculado')
 ]).apply(crear_lista)
 
-result.to_excel(r'DueDate_Grupo4.xlsx')
+result.to_excel(r'DueDate_Grupo4a.xlsx')
 
 #############
 def crear_lista2(group):
